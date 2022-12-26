@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 80px;
   padding: 0px 10%;
-  background-color: red;
+  background-color: ${(props) => props.theme.header};
 `;
 
 export const Content = styled.div`
@@ -16,5 +16,6 @@ export const Content = styled.div`
   h1 {
     font-size: 42px;
     font-weight: 700;
+    color: white;
   }
 `;

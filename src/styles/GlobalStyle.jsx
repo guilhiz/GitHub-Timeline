@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  background-color: #EEF0F6;
+  background-color: ${props => props.theme.background};
 }
 *, *:before, *:after {
   box-sizing: inherit;
