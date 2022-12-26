@@ -7,12 +7,12 @@ import { darkTheme, lightTheme } from "../theme";
 import "reset-css";
 
 function App() {
-  const [theme, useTheme] = useState(true)
+  const [theme, setTheme] = useState(true)
   return (
     <>
       <ThemeProvider theme={theme ? darkTheme : lightTheme}>
         <GlobalStyle />
-        <Header />
+        <Header setTheme={setTheme} theme={theme} />
         <h1>Salve Cria</h1>
       </ThemeProvider>
     </>
