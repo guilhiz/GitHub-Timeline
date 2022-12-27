@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../theme";
 
 import "reset-css";
+import Timeline from "./Timeline";
 
 function App() {
   const [theme, setTheme] = useState(true)
@@ -13,7 +14,7 @@ function App() {
       <ThemeProvider theme={theme ? darkTheme : lightTheme}>
         <GlobalStyle />
         <Header setTheme={setTheme} theme={theme} />
-        <h1>Salve Cria</h1>
+        <Timeline theme={theme} />
       </ThemeProvider>
     </>
   );

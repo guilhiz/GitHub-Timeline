@@ -4,6 +4,10 @@ export const Container = styled.div`
   width: 100%;
   height: 80px;
   padding: 0px 3% 0px 10%;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
   background-color: ${(props) => props.theme.header};
 `;
 
@@ -25,11 +29,11 @@ export const Content = styled.div`
     align-items: center;
     width: 40%;
     position: relative;
-     div{
+    div {
       position: absolute;
       right: 3%;
       top: 5%;
-     }
+    }
   }
 `;
 
@@ -40,6 +44,7 @@ export const ThemeBtn = styled.button`
   border: none;
   cursor: pointer;
   background: transparent;
+  margin-right: 10px;
   :active {
     scale: 0.9;
   }

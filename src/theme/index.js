@@ -1,8 +1,8 @@
 export const darkTheme = {
   background: "#0F1624",
   header: "#2C426D",
-  title: "#92A8D3",
-  subtitle: "#4161A3",
+  title: "#4161A3",
+  subtitle: "#92A8D3",
   text: "#D8DFED",
   button: "#0F1624",
   accentColor: "#B68949",
