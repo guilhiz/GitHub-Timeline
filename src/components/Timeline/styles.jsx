@@ -22,14 +22,16 @@ export const Content = styled.div`
     color: ${(props) => props.theme.text};
   }
 
-  .vertical-timeline-element--project {
-    .date-timeline {
-      color: ${(props) => props.theme.text};
-    }
-    .vertical-timeline-element-content {
-      ${(props) => props.switch && "background-color: black"};
-      ${(props) => props.switch && "box-shadow: 0px 3px 0px #373737"};
-      transition: all 500ms;
+  .date-timeline {
+    color: ${(props) => props.theme.text};
+  }
+  .vertical-timeline-element-content {
+    ${(props) => props.switch && "background-color: black"};
+    ${(props) => props.switch && "box-shadow: 0px 3px 0px #373737"};
+    transition: all 500ms;
+    cursor: pointer;
+    :hover {
+      background-color: ${(props) => (props.switch ? "#1a1a1a" : "#e6e6e6")};
     }
   }
 `;
