@@ -23,17 +23,12 @@ export const Content = styled.div`
     color: white;
     color: ${(props) => props.theme.accentColor};
   }
-  div:nth-child(2) {
+  form {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 40%;
     position: relative;
-    div {
-      position: absolute;
-      right: 3%;
-      top: 5%;
-    }
   }
 `;
 
@@ -72,4 +67,13 @@ export const Input = styled.input`
   :focus {
     outline: none;
   }
+`;
+
+export const SubmitBtn = styled.button`
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 3%;
+  top: 5%;
+  cursor: pointer;
 `;

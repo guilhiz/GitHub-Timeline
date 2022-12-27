@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Inter", sans-serif;
   font-weight: 400;
   background-color: ${props => props.theme.background};
-  transition: all 500ms;
+  transition: all 300ms;
 }
 *, *:before, *:after {
   box-sizing: inherit;
