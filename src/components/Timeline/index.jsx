@@ -9,6 +9,12 @@ import * as S from "./styles";
 function Timeline({ theme, repos, username }) {
   const filterRepos = repos?.filter((r) => r.name !== `${username}`);
 
+  const descendingOrder = (a, b) => {
+    const dateA = a.created_at.split("T")[0];
+    const dateB = b.created_at.split("T")[0];
+    return dateA < dateB;
+  };
+
   const formatDate = (date) => {
     const splitDate = date.split("T")[0];
     const formattedDate = dayjs(splitDate).locale("pt-br").format("DD/MM/YYYY");
@@ -19,7 +25,7 @@ function Timeline({ theme, repos, username }) {
     <S.Container>
       <S.Content switch={theme}>
         <VerticalTimeline lineColor="#000">
-          {filterRepos?.map((r) => (
+          {filterRepos?.sort(descendingOrder).map((r) => (
             <VerticalTimelineElement
               key={r.name}
               className="vertical-timeline-element--project"
