@@ -8,7 +8,7 @@ import "reset-css";
 import Timeline from "./Timeline";
 
 function App() {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [repos, setRepos] = useState([]);
