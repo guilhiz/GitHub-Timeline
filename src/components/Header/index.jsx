@@ -11,6 +11,10 @@ function Header({ setTheme, theme, setRepos, setUsername, setLoading }) {
     api
       .get(`/${value}/repos`)
       .then((res) => {
+        if (res.data.length < 1) {
+          setLoading(false);
+          return alert("Ops, esse username do github não é válido :(");
+        }
         setRepos(res.data);
         setUsername(value);
         setValue("");

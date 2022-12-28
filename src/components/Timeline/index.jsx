@@ -44,6 +44,7 @@ function Timeline({ theme, repos, username, loading }) {
               icon={<GithubLogo size={32} color="#fff" weight="fill" />}
               date={formatDate(r.created_at)}
               dateClassName="date-timeline"
+              onTimelineElementClick={() => window.open(r.html_url, "_blank")}
             >
               <h3>{r.name}</h3>
               <p>{r.description}</p>
