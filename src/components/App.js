@@ -9,14 +9,21 @@ import Timeline from "./Timeline";
 
 function App() {
   const [theme, setTheme] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [repos, setRepos] = useState([]);
   return (
     <>
       <ThemeProvider theme={theme ? darkTheme : lightTheme}>
         <GlobalStyle />
-        <Header setTheme={setTheme} theme={theme} setRepos={setRepos} setUsername={setUsername} />
-        <Timeline theme={theme} repos={repos} username={username} />
+        <Header
+          setTheme={setTheme}
+          theme={theme}
+          setRepos={setRepos}
+          setUsername={setUsername}
+          setLoading={setLoading}
+        />
+        <Timeline theme={theme} repos={repos} username={username} loading={loading} />
       </ThemeProvider>
     </>
   );

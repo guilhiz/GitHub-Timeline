@@ -9,6 +9,12 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   background-color: ${(props) => props.theme.header};
+  @media (max-width: 800px) {
+    padding: 0px 8px;
+  }
+  @media (max-width: 390px) {
+    padding: 0px 0px;
+  }
 `;
 
 export const Content = styled.div`
@@ -17,25 +23,42 @@ export const Content = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  h1 {
-    font-size: 42px;
-    font-weight: 700;
-    color: white;
-    color: ${(props) => props.theme.accentColor};
+  @media (max-width: 400px) {
+    justify-content: start;
+  }
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    max-width: 570px;
   }
   form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 90%;
     position: relative;
   }
 `;
 
+export const Title = styled.h1`
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  color: ${(props) => props.theme.accentColor};
+  @media (max-width: 800px) {
+    font-size: 32px;
+  }
+  @media (max-width: 600px) {
+    font-size: 22px;
+    margin-right: 12px;
+  }
+`;
+
 export const ThemeBtn = styled.button`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 32px;
+  height: 32px;
   border: none;
   cursor: pointer;
   background: transparent;
@@ -49,7 +72,8 @@ export const ThemeBtn = styled.button`
 `;
 
 export const Input = styled.input`
-  width: 90%;
+  width: 100%;
+  min-width: 140fpx;
   height: 30px;
   background-color: ${(props) => props.theme.background};
   border-radius: 5px;
@@ -76,4 +100,7 @@ export const SubmitBtn = styled.button`
   right: 3%;
   top: 5%;
   cursor: pointer;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;

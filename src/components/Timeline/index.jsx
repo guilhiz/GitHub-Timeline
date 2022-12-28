@@ -2,11 +2,10 @@ import React from "react";
 import dayjs from "dayjs";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
 import { GithubLogo } from "phosphor-react";
 import * as S from "./styles";
 
-function Timeline({ theme, repos, username }) {
+function Timeline({ theme, repos, username, loading }) {
   const filterRepos = repos?.filter((r) => r.name !== `${username}`);
 
   const descendingOrder = (a, b) => {
@@ -21,6 +20,18 @@ function Timeline({ theme, repos, username }) {
     return formattedDate;
   };
 
+  if (repos.length < 1 && !loading) {
+    return (
+      <S.Container>
+        <h2>Pesquise um username válido para ver sua timeline aqui.</h2>
+      </S.Container>
+    );
+  }
+
+  if (loading) {
+    return <S.Loader />;
+  }
+
   return (
     <S.Container>
       <S.Content switch={theme}>
@@ -29,7 +40,7 @@ function Timeline({ theme, repos, username }) {
             <VerticalTimelineElement
               key={r.name}
               className="vertical-timeline-element--project"
-              iconStyle={{ background: "#1D2C49", width: "5%" }}
+              iconStyle={{ background: "#1D2C49" }}
               icon={<GithubLogo size={32} color="#fff" weight="fill" />}
               date={formatDate(r.created_at)}
               dateClassName="date-timeline"
