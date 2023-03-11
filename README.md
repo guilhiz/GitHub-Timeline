@@ -12,8 +12,9 @@
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Node](https://nodejs.org/pt-br/)
 - [React](https://pt-br.reactjs.org/)
-- [React-Router](https://reactrouter.com/en/main)
+- [Styled-Component](https://styled-components.com/)
 - [Axios](https://axios-http.com/)
+- [Figma](https://www.figma.com/)
 
 ## :file_folder: Estrutura dos Principais Arquivos
 
